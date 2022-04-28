@@ -1,0 +1,57 @@
+.content-body h1 {
+  font-weight: 700;
+}
+
+.content-body h2 {
+  font-weight: 700;
+}
+
+.content-body h3 {
+  font-weight: 700;
+}
+
+.content-body h4 {
+  font-weight: 700;
+}
+
+.content-body h5 {
+  font-weight: 700;
+}
+
+.content-body h6 {
+  font-weight: 700;
+}
+
+.content-body p {
+  margin: 20px 0px 20px 0px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 35px;
+}
+
+.content-body img {
+  width: 100%;
+  margin: 20px 0px 20px 0px;
+  border: none;
+}
+.content-body iframe {
+  width: 100%;
+  min-height: 400px;
+  height: auto;
+  margin: 30px 0px 30px 0px;
+}
+.content-body a {
+  text-decoration: none;
+}
+.content-body p code {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin : 50px 0px 50px 0px;
+  white-space: pre;
+  padding: 20px 40px 20px 40px;
+  border-radius: 2px;
+}
+.content-body table {
+  font-size: 14px;
+}

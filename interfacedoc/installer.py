@@ -1,4 +1,5 @@
 from zipfile import ZipFile
+from colorama import Fore
 import requests
 import shutil
 import os
@@ -23,7 +24,7 @@ class InterfaceInstaller:
 
     def downloadSourceZip(self, url = ""):
 
-        print("downloading souce code....")
+        print(Fore.GREEN + "downloading souce code....")
 
         headers = {}
         file = requests.get(self.__url, headers=headers)
@@ -36,7 +37,7 @@ class InterfaceInstaller:
 
     def unzipFile(self):
         
-        print("extract files...")
+        print(Fore.GREEN + "extracting files...")
 
         # remove folder if already exists
         if os.path.exists(self.__file_path.replace(".zip", "")):
@@ -55,7 +56,7 @@ class InterfaceInstaller:
 
     def deleteRemoteRepository(self, path):
 
-        print("delete origin...")
+        print(Fore.RED + "delete origin...")
 
         git_dir = os.path.join(self.__global_path, path, ".git")
         if os.path.exists(git_dir):
@@ -66,7 +67,7 @@ class InterfaceInstaller:
 
     def deleteZip(self):
 
-        print("delete zip file")
+        print(Fore.RED + "delete zip file")
 
         project_path = os.path.join(self.__global_path, self.__project_name + ".zip")
         if os.path.exists(project_path):
@@ -82,8 +83,8 @@ class InterfaceInstaller:
         if download:    
             self.deleteRemoteRepository(self.unzipFile() + '/.git')
             self.deleteZip()
-            print("done...")
-            print("\n{}\n\ncd {} \npython3 app.py\n".format("-"*10,self.__project_name))
-            print("\n\nor run with docker compose\n\ncd {}\ndocker-compose up\n\n".format(self.__project_name))
+            print(Fore.GREEN + "done...")
+            print(Fore.BLUE + "\n{}\n\ncd {} \npython3 app.py\n".format("-"*10,self.__project_name))
+            print(Fore.BLUE + "\n\nor run with docker compose\n\ncd {}\ndocker-compose up\n\n".format(self.__project_name))
         else:
-            print("download failed, please check your network...")
+            print(Fore.RED + "download failed, please check your network...")

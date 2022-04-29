@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
   
 setuptools.setup(
     name="interfacedoc",
-    version="0.0.1",
+    version="0.0.2",
     author="rizki maulana",
     author_email="rizkimaulana348@gmail.com",
     description="Interface documentation installer",
@@ -28,6 +28,7 @@ setuptools.setup(
         "soupsieve==2.3.2.post1",
         "Werkzeug==2.1.1",
         "zipp==3.8.0",
+        "colorama==0.4.4"
     ],
     entry_points= {
         'console_scripts': ['interfacedoc=interfacedoc.run:start']
